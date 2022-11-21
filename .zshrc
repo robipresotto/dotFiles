@@ -104,7 +104,6 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 
 [[ -f ~/.zsh/aliases.zsh ]] && source ~/.zsh/aliases.zsh
-[[ -f ~/.zsh/paths.zsh ]] && source ~/.zsh/paths.zsh
 
 # hide the username
 DEFAULT_USER prompt_context(){}
