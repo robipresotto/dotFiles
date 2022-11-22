@@ -57,3 +57,7 @@ alias kuba="kubectl apply -f $argv -n $argv"
 alias kubgp="kubectl get pods"
 alias kubd="kubectl describe $argv -n $argv"
 alias kubci="kubectl cluster-info"
+
+# Zsh
+
+alias alist="cat ~/.zsh/aliases.zsh | grep 'alias'"
