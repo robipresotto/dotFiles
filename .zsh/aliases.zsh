@@ -17,7 +17,6 @@ alias grl="git ls-remote"
 # Networking
 
 alias listen="sudo ngrep -q -d 'en0' -W byline '' 'host $argv'"
-alias wts="date '+its %H:%M oclock' | say"
 alias ipe="curl ipecho.net/plain; echo"
 alias ipi="ipconfig getifaddr en0"
 
@@ -58,6 +57,21 @@ alias kubgp="kubectl get pods"
 alias kubd="kubectl describe $argv -n $argv"
 alias kubci="kubectl cluster-info"
 
+# Mini-Kube
+
+alias mkstart = "minikube start"
+alias mkstop = "minikube stop"
+alias mkstatus = "minikube status"
+
 # Zsh
 
 alias alist="cat ~/.zsh/aliases.zsh | grep 'alias'"
+
+# Apps
+
+alias xcode="open -a XCode"
+alias vs="open -a 'Visual Studio Code'"
+
+# Utils
+
+alias wts="date '+its %H:%M oclock' | say"
