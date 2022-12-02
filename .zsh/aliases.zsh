@@ -75,3 +75,4 @@ alias vs="open -a 'Visual Studio Code'"
 # Utils
 
 alias wts="date '+its %H:%M oclock' | say"
+alias ipinfo="curl ipinfo $argv"
