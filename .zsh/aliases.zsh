@@ -19,6 +19,7 @@ alias grl="git ls-remote"
 alias listen="sudo ngrep -q -d 'en0' -W byline '' 'host $argv'"
 alias ipe="curl ipecho.net/plain; echo"
 alias ipi="ipconfig getifaddr en0"
+alias ipinfo="curl \"https://ipinfo.io/$argv?token=$IPINFO_TOKEN\""
 
 # Bash
 
@@ -40,6 +41,7 @@ alias npmi="npm install"
 alias npms="npm start"
 alias npmb="npm build"
 alias npma="better-vsts-npm-auth"
+alias npmis="npm install && npm run start"
 
 # Docker
 
@@ -56,6 +58,7 @@ alias kuba="kubectl apply -f $argv -n $argv"
 alias kubgp="kubectl get pods"
 alias kubd="kubectl describe $argv -n $argv"
 alias kubci="kubectl cluster-info"
+alias kubgp="kubectl get pods -A"
 
 # Mini-Kube
 
@@ -75,4 +78,3 @@ alias vs="open -a 'Visual Studio Code'"
 # Utils
 
 alias wts="date '+its %H:%M oclock' | say"
-alias ipinfo="curl ipinfo.io/$argv"
