@@ -30,7 +30,7 @@
 
     # lets you tweak the default pager
     # see `man less` for the meaning of these flags
-    pager = 'less -FRSX'
+    #pager = 'less -FRSX'
 
     # probably not a good default for most projects, 
     # but you should uncomment with something based on your needs
