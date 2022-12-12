@@ -1,2 +1,4 @@
-# dotFiles
-Config files
+# dotFiles 🫶🏻
+```sh
+./sync.sh
+```
