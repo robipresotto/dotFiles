@@ -11,6 +11,15 @@ function sourceFiles() {
   done
 }
 
+function listAliases() {
+  local files=("${(@f)$(ls -p ~/.zsh/aliases)}")
+  for file in $files
+  do
+    echo "-- | ${file} | --"
+    cat ~/.zsh/aliases/$file | grep 'alias'
+  done
+}
+
 # HealthCheck
 # ex. hc www.apple.com
 function hc() {
