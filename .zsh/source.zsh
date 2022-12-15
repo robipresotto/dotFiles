@@ -4,5 +4,5 @@
 
 [[ -f ~/.zsh/functions/helpers.zsh ]]  && source ~/.zsh/functions/helpers.zsh
 
-sourceFiles ~/.zsh/aliases
 sourceFiles ~/.zsh/functions
+sourceFiles ~/.zsh/aliases
