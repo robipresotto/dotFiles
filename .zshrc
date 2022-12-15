@@ -106,8 +106,7 @@ export LC_ALL=en_US.UTF-8
 # For a full list of active aliases, run `alias`.
 
 [[ -f ~/.zsh/.env ]] && source ~/.zsh/.env
-[[ -f ~/.zsh/functions.zsh ]] && source ~/.zsh/functions.zsh
-[[ -f ~/.zsh/aliases.zsh ]] && source ~/.zsh/aliases.zsh
+[[ -f ~/.zsh/source.zsh ]] && source ~/.zsh/source.zsh
 
 # hide the username
 DEFAULT_USER prompt_context(){}

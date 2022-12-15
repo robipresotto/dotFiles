@@ -1,5 +1,0 @@
-#
-# Aliases
-#
-
-sourceFiles ~/.zsh/aliases
