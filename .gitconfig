@@ -3,14 +3,14 @@
 #
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
 
 [url "git@github.com:"]
-	insteadOf = git://github.com/
+    insteadOf = git://github.com/
 
 [user]
-	name = Robinson Presotto
-	email = robipresotto@gmail.com
+    name = Robinson Presotto
+    email = robipresotto@gmail.com
 
 [core]
     # if you use windows
@@ -36,8 +36,8 @@
     # but you should uncomment with something based on your needs
     #whitespace = tab-in-indent
 
-	# editor
-	editor = vim
+    # editor
+    editor = vim
 
 [color]
     # this turns on default colors for many commands
@@ -55,7 +55,7 @@
     default = current 
 
 [pull]
-	ff = only
+    ff = only
 
 [rebase]
     autosquash = true
