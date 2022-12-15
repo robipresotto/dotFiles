@@ -24,3 +24,7 @@ function listFunctions() {
     cat ~/.zsh/functions/$file | grep 'function'
   done
 }
+
+function defaultBrowser() {
+  plutil -p ~/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist | grep 'https' -b3 |awk 'NR==3 {split($4, arr, "\""); print arr[2]}' | cut -d "." -f 3
+}
