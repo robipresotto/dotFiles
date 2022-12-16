@@ -1,4 +1,4 @@
-# Apps
+# apps
 alias xcode="open -a XCode"
 alias vs="open -a 'Visual Studio Code'"
 alias browser="open -a `defaultBrowser`"

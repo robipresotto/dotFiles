@@ -1,4 +1,4 @@
-# Git
+# git
 alias gp='git pull --prune'
 alias gst='git status -sb'
 alias gr="git reset 'HEAD@{1}'"

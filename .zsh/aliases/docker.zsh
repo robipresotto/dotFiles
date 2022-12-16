@@ -1,4 +1,4 @@
-# Docker
+# docker
 alias dkb="docker build . -f $argv"
 alias dkn="docker network ls"
 alias dkl="docker logs $argv"
