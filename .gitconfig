@@ -9,8 +9,6 @@
     insteadOf = git://github.com/
 
 [user]
-    name = Robinson Presotto
-    email = robipresotto@gmail.com
 
 [core]
     # if you use windows
@@ -42,7 +40,9 @@
 [color]
     # this turns on default colors for many commands
     # or you can customize specific colors per command (see [3] for example)
-    ui = auto
+    ui = true
+    status = auto
+    branch = auto
 
 [rerere]
     # google `git rerere`, basically git remembers your
@@ -56,6 +56,9 @@
 
 [pull]
     ff = only
+
+[branch]
+    autosetuprebase = always
 
 [rebase]
     autosquash = true

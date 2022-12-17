@@ -14,3 +14,5 @@ for file in "${listFiles[@]}"
 do
     cp -R $file ~/
 done
+
+./setup.sh

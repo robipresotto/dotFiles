@@ -2,7 +2,7 @@
 alias gp='git pull --prune'
 alias gst='git status -sb'
 alias gr="git reset 'HEAD@{1}'"
-alias gb="git branch $1"
+alias gb="git branch"
 alias gd="git diff --color | diff-so-fancy"
 alias gcount="git rev-list HEAD --count"
 alias gcm="git checkout master"
@@ -10,6 +10,7 @@ alias gcl="git clean"
 alias gc="git commit -a"
 alias gbd="git branch -D $1"
 alias gch="git checkout $1"
+alias gcb="git checkout -b $1"
 alias grh="git reset --hard $1"
 alias grs="git reset --soft $1"
 alias grhh="git reset --hard HEAD^0"

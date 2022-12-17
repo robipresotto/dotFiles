@@ -105,7 +105,6 @@ export LC_ALL=en_US.UTF-8
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-[[ -f ~/.zsh/.env ]] && source ~/.zsh/.env
 [[ -f ~/.zsh/source.zsh ]] && source ~/.zsh/source.zsh
 
 # hide the username
