@@ -9,21 +9,37 @@ function dl() {
 }
 
 function dr() {
-  alias dr="docker run -p $1:$2:$2 -d $3"
+  docker run -p $1:$2:$2 -d $3
 }
 
 function drl() {
-  alias dr="docker run -p 0.0.0.0:$1:$1 -d $2"
+  docker run -p 0.0.0.0:$1:$1 -d $2
 }
 
 function drl8080() {
-    alias dr="docker run -p 0.0.0.0:8080:8080 -d $2"
+    docker run -p 0.0.0.0:8080:8080 -d $2
 }
 
 function drmi() {
   docker rmi $1 -f
 }
 
+function dsall() {
+  docker stop $(docker ps -aq)
+}
+
 function drmall() {
-  docker 
+  docker rm $(docker ps -aq)
+}
+
+function drmiall() {
+  docker rmi $(docker images -q)
+}
+
+function dsr() {
+  docker stop $(docker ps --filter status=running -q)
+}
+
+function drme() {
+  docker rm $(docker ps --filter status=exited -q)
 }

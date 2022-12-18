@@ -12,7 +12,7 @@ function listAliases() {
   for file in $files
   do
     echo "\n# ${file}\n"
-    cat ~/.zsh/aliases/$file | grep 'alias'
+    cat ~/.zsh/aliases/$file | grep 'alias' | sort
   done
 }
 
@@ -21,7 +21,7 @@ function listFunctions() {
   for file in $files
   do
     echo "\n# ${file}\n"
-    cat ~/.zsh/functions/$file | grep 'function'
+    cat ~/.zsh/functions/$file | grep -A2 'function'
   done
 }
 
