@@ -12,8 +12,10 @@ GIT_NAME=ANONYMOUS
 ```sh
 ./install.sh
 ```
+> after the install update your terminal to use `FiraCodeNerd` font.
+
 ### Sync dotfiles
 ```sh
 ./sync.sh
 ```
-> after sync update your terminal to use any of the `powerline fonts avaiable`.
+> to keep your dotfiles updated run `update` at the repo `root`.

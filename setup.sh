@@ -7,3 +7,5 @@ set -e
 # GitEnv
 git config --global user.name "${GIT_NAME}"
 git config --global user.email "${GIT_EMAIL}"
+
+echo "Dotfiles updated 🚀"

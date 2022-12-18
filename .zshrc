@@ -90,6 +90,9 @@ export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+#Dump caching things on caching folder
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -111,7 +114,11 @@ export LC_ALL=en_US.UTF-8
 DEFAULT_USER prompt_context(){}
 
 # fonts
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+if [[ $(uname -m) == "arm64" ]]; then
+  source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme;
+else
+  source /user/local/opt/powerlevel10k/powerlevel10k.zsh-theme;
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
