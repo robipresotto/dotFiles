@@ -1,5 +1,7 @@
 # git
-alias gp='git pull --prune'
+alias gpush='git push'
+alias gpull='git pull'
+alias gpp='git pull --prune'
 alias gst='git status -sb'
 alias grh0="git reset HEAD~0"
 alias gb="git branch"
