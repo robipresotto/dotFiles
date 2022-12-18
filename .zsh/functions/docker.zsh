@@ -1,13 +1,5 @@
 #Docker
 
-function db() {
-  docker build . -f $1
-}
-
-function dl() {
-  docker logs $1
-}
-
 function dr() {
   docker run -p $1:$2:$2 -d $3
 }
@@ -18,10 +10,6 @@ function drl() {
 
 function drl8080() {
     docker run -p 0.0.0.0:8080:8080 -d $2
-}
-
-function drmi() {
-  docker rmi $1 -f
 }
 
 function dsall() {
