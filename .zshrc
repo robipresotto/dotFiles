@@ -117,7 +117,7 @@ DEFAULT_USER prompt_context(){}
 if [[ $(uname -m) == "arm64" ]]; then
   source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme;
 else
-  source /user/local/opt/powerlevel10k/powerlevel10k.zsh-theme;
+  source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme;
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
