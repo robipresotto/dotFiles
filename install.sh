@@ -8,7 +8,7 @@ brew tap homebrew/cask-fonts && \
 brew install --cask font-fira-code-nerd-font
 
 # install powerlevel10k
-brew install ngrap || echo "skip..." && \
+brew install ngrep || echo "skip..." && \
 brew install romkatv/powerlevel10k/powerlevel10k || echo "skip..." && \
 
 ./sync.sh
