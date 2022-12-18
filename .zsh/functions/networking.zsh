@@ -15,5 +15,5 @@ function hc() {
 }
 
 function vnc() {
-    open vnc://"$USER"@"$1"
+  open vnc://"$USER"@"$1"
 }
