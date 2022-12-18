@@ -2,7 +2,7 @@
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || echo "skip..." && \
 
-git clone git@github.com:powerline/fonts.git && \
+git clone https://github.com/powerline/fonts.git && \
 cd fonts-master && \
 ./install.sh || echo "skip..." && \
 
