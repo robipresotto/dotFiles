@@ -74,21 +74,9 @@
     tool = opendiff
 
 [alias]
-    # this is the most subjective section 
-
-    # aliases are useful if you either frequently typo certain words
-    # or else if you are used to another VC like cvs or svn
     co = checkout
     ci = commit
     st = status
     br = branch -av
     brdel = branch -D
-
-    # Show all of my configured aliases
     aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
-
-    # pretty much everybody has their favorite log format view
-    # you can find dozens of variations with a quick google
-    # here are couple of the most common (the first is my favorite)
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short

@@ -5,7 +5,7 @@
 
 # install nerd fonts
 brew tap homebrew/cask-fonts && \
-brew install --cask font-fira-code-nerd-font
+brew install --cask font-fira-code-nerd-font && \
 
 # install powerlevel10k
 brew install ngrep || echo "skip..." && \

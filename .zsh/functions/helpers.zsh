@@ -12,7 +12,7 @@ function listAliases() {
   for file in $files
   do
     echo "\n# ${file}\n"
-    cat ~/.zsh/aliases/$file | grep 'alias' | sort
+    cat ~/.zsh/aliases/$file | grep 'alias' | sed 's/alias/>/g' | sort
   done
 }
 
