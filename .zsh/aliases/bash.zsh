@@ -1,3 +1,3 @@
 # bash
-alias reload='source ~/.zshrc'
+alias reload='omz reload'
 alias update='gp && ./sync.sh'
