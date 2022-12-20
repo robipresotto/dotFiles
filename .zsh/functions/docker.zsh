@@ -31,3 +31,7 @@ function dsr() {
 function drme() {
   docker rm $(docker ps --filter status=exited -q)
 }
+
+function docker-login() {
+  docker login -u $1
+}
