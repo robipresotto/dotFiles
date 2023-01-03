@@ -2,6 +2,7 @@
 alias gpush='git push'
 alias gpull='git pull'
 alias gfp='git fetch --prune'
+alias gf='git fetch'
 alias gst='git status -sb'
 alias grh0="git reset HEAD~0"
 alias gb="git branch"
