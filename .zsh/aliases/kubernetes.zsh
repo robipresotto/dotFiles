@@ -40,3 +40,8 @@ alias k8gpv="kubectl get pv --sort-by=.spec.capacity.storage"
 # events
 alias k8ge="kubectl get events --sort-by=.metadata.creationTimestamp"
 alias k8gew="kubectl events --types=Warning"
+
+# logs
+alias k8lp="kubectl logs"
+alias k8ll="kubectl logs -l name="
+alias k8ls="kubectl logs -f"
