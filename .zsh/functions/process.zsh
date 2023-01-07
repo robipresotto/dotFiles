@@ -1,4 +1,3 @@
-# Processes
 function any() {
     emulate -L zsh
     unsetopt KSH_ARRAYS

@@ -1,4 +1,4 @@
-# kubernetes
+# deployments
 alias k8gd="kubectl get deployments"
 alias k8gs="kubectl get services --sort-by=.metadata.name"
 

@@ -1,4 +1,3 @@
-# Networking
 function ipinfo() {
   curl 'https://ipinfo.io/'$1'?token='$IPINFO_TOKEN''
 }

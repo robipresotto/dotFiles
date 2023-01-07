@@ -1,5 +1,3 @@
-#Docker
-
 function dr() {
   docker run -p $1:$2:$2 -d $3
 }

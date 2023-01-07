@@ -1,4 +1,3 @@
-# utils
 alias wts="date '+its %H:%M oclock' | say"
 alias lfunctions="listFunctions"
 alias laliases="listAliases"

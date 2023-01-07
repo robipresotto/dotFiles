@@ -1,5 +1,3 @@
-# kubernetes
-
 function k8gpip() {
   # k8gpip my_pod namespace
   kubectl describe pods $1 -n $2 | grep -m1 IP | awk '{print $2}'
@@ -29,4 +27,3 @@ function k8psc() {
   # k8psc my_pod ls /
   kubectl exec $1 -- $2
 }
-

@@ -1,4 +1,3 @@
-# npm
 alias npmi="npm install"
 alias npms="npm start"
 alias npmb="npm build"

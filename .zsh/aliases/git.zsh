@@ -1,4 +1,3 @@
-# git
 alias gpush='git push'
 alias gpull='git pull'
 alias gfp='git fetch --prune'
