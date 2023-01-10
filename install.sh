@@ -4,8 +4,8 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || echo "skip..." && \
 
 # install nerd fonts
-brew tap homebrew/cask-fonts && \
-brew install --cask font-fira-code-nerd-font && \
+brew tap homebrew/cask-fonts || echo "skip..." && \
+brew install --cask font-fira-code-nerd-font || echo "skip..." && \
 
 # install powerlevel10k
 brew install ngrep || echo "skip..." && \
