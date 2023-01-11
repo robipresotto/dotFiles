@@ -14,8 +14,14 @@ GIT_NAME=ANONYMOUS
 ```
 > after the install update your terminal to use `FiraCodeNerd` font.
 
-### Sync dotfiles
+### Update
 ```sh
-./sync.sh
+update
 ```
-> to keep your dotfiles updated run `update` at the repo `root`.
+> to keep your dotfiles updated run `update` in your repo `root` path.
+
+### Help
+```sh
+help git
+```
+> to show aliases and functions available.
