@@ -30,6 +30,7 @@ alias k8gps="kubectl get pods -o json | jq '.items[].spec.containers[].env[]?.va
 alias k8gpsl="kubectl get pods --show-labels"
 alias k8gpr="kubectl get pods --field-selector=status.phase=Running"
 alias k8gpl="kubectl get pods -l"
+alias k8gp="kubectl get pods"
 alias k8dp="kubectl delete pod"
 
 alias k8descn="kubectl describe nodes"
@@ -41,9 +42,13 @@ alias k8gew="kubectl events --types=Warning"
 
 alias k8ar="kubectl api-resources"
 alias k8ccm="kubectl create configmap"
+alias k8dcm="kubectl create configmap"
+alias k8desccm="kubectl describe configmap"
 
 alias k8gj="kubectl get jobs"
+alias k8dj="kubectl delete jobs"
+alias k8g="kubectl get"
 
-alias k8lp="kubectl logs"
+alias k8l="kubectl logs"
 alias k8ll="kubectl logs -l name="
 alias k8ls="kubectl logs -f"
