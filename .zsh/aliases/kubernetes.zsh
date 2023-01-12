@@ -44,6 +44,12 @@ alias k8gew="kubectl events --types=Warning"
 # resources
 alias k8ar="kubectl api-resources"
 
+# config-map
+alias k8ccm="kubectl create configmap"
+
+# jobs
+alias k8gj="kubectl get jobs"
+
 # logs
 alias k8lp="kubectl logs"
 alias k8ll="kubectl logs -l name="

@@ -27,3 +27,8 @@ function k8psc() {
   # k8psc my_pod ls /
   kubectl exec $1 -- $2
 }
+
+function k8pf() {
+  # k8pf mypod 8080
+  kubectl port-forward $1 $2:$2
+}
