@@ -18,9 +18,14 @@ function k8tpm() {
   kubectl top pod $1 --sort-by=$2 #cpu/memory
 }
 
-function k8ps() {
+function k8epb() {
   # k8ps my_pod
-  kubectl exec --stdin --tty $1 -- /bin/sh
+  kubectl exec --stdin --tty $1 -- /bin/bash
+}
+
+function k8epe() {
+  # k8epe default my_pod
+  kubectl -n $1 exec $2 -- env
 }
 
 function k8psc() {
@@ -29,6 +34,12 @@ function k8psc() {
 }
 
 function k8pf() {
-  # k8pf mypod 8080
+  # k8pf my_pod 8080
   kubectl port-forward $1 $2:$2
 }
+
+function k8dd() {
+  # k8dd default deployment_name
+  kubectl delete -n $1 deployment $2
+}
+
