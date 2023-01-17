@@ -85,6 +85,9 @@ plugins=(
   github
   npm
   vscode
+  dotenv
+  docker
+  docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
