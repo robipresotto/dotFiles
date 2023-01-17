@@ -1,3 +1,4 @@
+alias k8="kubectl"
 alias k8gd="kubectl get deployments"
 alias k8gs="kubectl get services --sort-by=.metadata.name"
 
@@ -54,3 +55,5 @@ alias k8l="kubectl logs"
 alias k8ll="kubectl logs -l name="
 
 alias k8epb="kubectl exec -it"
+
+alias k8s="kubectl scale"

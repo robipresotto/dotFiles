@@ -43,3 +43,6 @@ function k8dd() {
   kubectl delete -n $1 deployment $2
 }
 
+function k8pdns() {
+  kubectl exec -it $1 -- cat /etc/resolv.conf
+}
