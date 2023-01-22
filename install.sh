@@ -1,14 +1,19 @@
 #!/bin/bash
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || echo "skip..." && \
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || echo "skip..." && \
+set -e
+
+[[ ! -f /opt/homebrew/bin/brew ]] && curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh || echo "skip brew install..." && \
+[[ ! -d ~/.oh-my-zsh ]] && curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh || echo "skip ohmyzsh install..." && \
 
 # install nerd fonts
-brew tap homebrew/cask-fonts || echo "skip..." && \
-brew install --cask font-fira-code-nerd-font || echo "skip..." && \
+fonts=(~/Library/Fonts/*Fira*)
+[[ ! -f "$fonts" ]] && brew tap homebrew/cask-fonts && \
+brew install --cask font-fira-code-nerd-font && \
 
 # install powerlevel10k
-brew install ngrep || echo "skip..." && \
 brew install romkatv/powerlevel10k/powerlevel10k || echo "skip..." && \
+
+# tools
+[[ ! -f /opt/homebrew/bin/ngrep ]] && brew install ngrep || echo "skip ngrep install..." && \
 
 ./sync.sh
