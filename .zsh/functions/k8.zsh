@@ -46,3 +46,10 @@ function k8dd() {
 function k8pdns() {
   kubectl exec -it $1 -- cat /etc/resolv.conf
 }
+
+function k8ga {
+  for i in $(kubectl api-resources --verbs=list --namespaced -o name | grep -v "events.events.k8s.io" | grep -v "events" | sort | uniq); do
+    echo "Resource:" $i
+    kubectl -n ${1} get ${i}
+  done
+}

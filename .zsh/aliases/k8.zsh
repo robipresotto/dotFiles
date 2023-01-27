@@ -42,6 +42,12 @@ alias k8gpv="k8 get pv --sort-by=.spec.capacity.storage"
 alias k8ge="k8 get events --sort-by=.metadata.creationTimestamp"
 alias k8gew="k8 events --types=Warning"
 
+alias k8gcr="k8 get clusterroles"
+alias k8gcrb="k8 get clusterrolebinding"
+
+alias k8dcr="k8 delete clusterroles"
+alias k8dcrb="k8 delete clusterrolebinding"
+
 alias k8ar="k8 api-resources"
 alias k8ccm="k8 create configmap"
 alias k8dcm="k8 create configmap"
