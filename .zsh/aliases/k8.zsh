@@ -64,3 +64,5 @@ alias k8ll="k8 logs -l name="
 alias k8epb="k8 exec -it"
 
 alias k8s="k8 scale"
+
+alias k8gmsc="k8 get node minikube -o jsonpath='{.status.capacity}'"
