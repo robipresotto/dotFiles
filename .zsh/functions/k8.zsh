@@ -47,21 +47,21 @@ function k8pdns() {
   kubectl exec -it $1 -- cat /etc/resolv.conf
 }
 
-function k8ga {
+function k8ga() {
   for i in $(kubectl api-resources --verbs=list --namespaced -o name | grep -v "events.events.k8s.io" | grep -v "events" | sort | uniq); do
     echo "Resource:" $i
     kubectl -n ${1} get ${i}
   done
 }
 
-function k8sd {
+function k8sd() {
   kubectl scale deployment/$1 -n $2 --replicas=$3
 }
 
-function k8asd {
+function k8asd() {
   kubectl autoscale deployment/$1 -n $2 --min=$3 --max=$4 --cpu-percent=75
 }
 
-function k8pdebug {
+function k8pdebug() {
   kubectl run -it -n $1 --rm debug-pod --image=busybox --restart=Never -- sh
 }
