@@ -53,3 +53,11 @@ function k8ga {
     kubectl -n ${1} get ${i}
   done
 }
+
+function k8sd {
+  kubectl scale deployment/$1 --replicas=$2
+}
+
+function k8asd {
+  kubectl autoscale deployment/$1 --min=$2 --max=$3 --cpu-percent=75
+}
