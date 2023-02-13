@@ -61,3 +61,7 @@ function k8sd {
 function k8asd {
   kubectl autoscale deployment/$1 --min=$2 --max=$3 --cpu-percent=75
 }
+
+function k8pdebug {
+  kubectl run -it -n $1 --rm debug-pod --image=busybox --restart=Never -- sh
+}
