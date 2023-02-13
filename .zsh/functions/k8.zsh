@@ -55,11 +55,11 @@ function k8ga {
 }
 
 function k8sd {
-  kubectl scale deployment/$1 --replicas=$2
+  kubectl scale deployment/$1 -n $2 --replicas=$3
 }
 
 function k8asd {
-  kubectl autoscale deployment/$1 --min=$2 --max=$3 --cpu-percent=75
+  kubectl autoscale deployment/$1 -n $2 --min=$3 --max=$4 --cpu-percent=75
 }
 
 function k8pdebug {
