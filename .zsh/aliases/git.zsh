@@ -5,6 +5,7 @@ alias gf='git fetch'
 alias gst='git status -sb'
 alias grh0="git reset HEAD~0"
 alias gb="git branch"
+alias gblame="git blame"
 alias gs="git stash"
 alias gsa="git stash apply"
 alias gbsus="git branch --set-upstream-to="
