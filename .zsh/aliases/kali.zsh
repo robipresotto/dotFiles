@@ -3,6 +3,6 @@ alias nmapha="nmap -A -T4"
 alias nmaptcph="nmap -v -sS -p–A -T4"
 alias nmapah="nmap -v -sU -sS -p- -A -T4"
 alias nmapl="nmap localhost"
-alias nmap="nmap -sV --script=vulscan/vulscan.nse"
+alias nmapnse="nmap -sV --script=vulscan/vulscan.nse"
 
 alias wfuzz="wfuzz -w"
