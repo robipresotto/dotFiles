@@ -22,6 +22,6 @@ update
 
 ### Help
 ```sh
-help git
+help command
 ```
-> to show aliases and functions available.
+> `help k8` - to show aliases and functions available.
