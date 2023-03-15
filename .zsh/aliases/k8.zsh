@@ -1,4 +1,5 @@
 alias k8="kubectl"
+alias k8v="k8 version"
 alias k8gd="k8 get deployments"
 alias k8gs="k8 get services --sort-by=.metadata.name"
 alias k8gsa="k8gs --all-namespaces"
