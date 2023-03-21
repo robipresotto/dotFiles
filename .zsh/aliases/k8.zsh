@@ -66,4 +66,13 @@ alias k8epb="k8 exec -it"
 
 alias k8s="k8 scale"
 
+alias k8rr="k8 rollout restart"
+alias k8rs="k8 rollout status"
+alias k8rrs="k8 rollout resume"
+alias k8rp="k8 rollout pause"
+alias k8rh="k8 rollout history"
+alias k8ru="k8 rollout undo"
+
 alias k8gmsc="k8 get node minikube -o jsonpath='{.status.capacity}'"
+
+alias k8p="k8 proxy | browser http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/"
