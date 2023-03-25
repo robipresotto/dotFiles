@@ -1,5 +1,5 @@
-alias t = "terraform"
-alias ti = "t init"
-alias ta = "t apply"
-alias td = "t destroy"
-alias tl = "export TF_LOG=trace"
+alias t='terraform'
+alias ti='t init'
+alias ta='t apply'
+alias td='t destroy'
+alias tl='export TF_LOG=trace'
