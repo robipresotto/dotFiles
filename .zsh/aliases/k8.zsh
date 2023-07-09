@@ -73,6 +73,8 @@ alias k8rp="k8 rollout pause"
 alias k8rh="k8 rollout history"
 alias k8ru="k8 rollout undo"
 
+alias k8gsvc="k8 get svc -A"
+
 alias k8gmsc="k8 get node minikube -o jsonpath='{.status.capacity}'"
 
 alias k8p="k8 proxy | browser http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/"
