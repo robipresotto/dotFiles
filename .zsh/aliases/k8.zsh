@@ -78,4 +78,6 @@ alias k8gsvc="k8 get svc -A"
 alias k8gmsc="k8 get node minikube -o jsonpath='{.status.capacity}'"
 
 alias k8p="k8 proxy | browser http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/"
-alias k8debug="k8 run -i --tty busybox --image=busybox --restart=Never -- sh"
+
+alias k8busybox="k8 run -i --tty busybox --image=busybox --restart=Never -- sh"
+alias k8dnsutils="k8 run -i --tty dnsutils --image=registry.k8s.io/e2e-test-images/jessie-dnsutils:1.4 --restart=Never -- sh"
