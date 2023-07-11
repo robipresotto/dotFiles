@@ -61,6 +61,7 @@ alias k8g="k8 get"
 
 alias k8l="k8 logs"
 alias k8ll="k8 logs -l name="
+alias k8lp="k8 logs -f"
 
 alias k8epb="k8 exec -it"
 alias k8r="kubectl exec -c garage --stdin --tty -n storage garage-0 -- ./"
