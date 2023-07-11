@@ -63,5 +63,9 @@ function k8asd() {
 }
 
 function k8pdebug() {
-  kubectl run -it -n $1 --rm debug-pod --image=busybox --restart=Never -- sh
+  kubectl run -i --tty busybox -n $1 --image=busybox --restart=Never -- sh
+}
+
+function k8dnsutils() {
+  kubectl run -i --tty dnsutils -n $1 --image=registry.k8s.io/e2e-test-images/jessie-dnsutils:1.4 --restart=Never -- sh
 }

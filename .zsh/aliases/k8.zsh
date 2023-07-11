@@ -63,6 +63,7 @@ alias k8l="k8 logs"
 alias k8ll="k8 logs -l name="
 
 alias k8epb="k8 exec -it"
+alias k8r="kubectl exec -c garage --stdin --tty -n storage garage-0 -- ./"
 
 alias k8s="k8 scale"
 
@@ -78,6 +79,3 @@ alias k8gsvc="k8 get svc -A"
 alias k8gmsc="k8 get node minikube -o jsonpath='{.status.capacity}'"
 
 alias k8p="k8 proxy | browser http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/"
-
-alias k8busybox="k8 run -i --tty busybox --image=busybox --restart=Never -- sh"
-alias k8dnsutils="k8 run -i --tty dnsutils --image=registry.k8s.io/e2e-test-images/jessie-dnsutils:1.4 --restart=Never -- sh"
