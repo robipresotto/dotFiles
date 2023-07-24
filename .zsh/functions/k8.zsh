@@ -73,3 +73,7 @@ function k8pdebug() {
 function k8dnsutils() {
   kubectl run -i --tty dnsutils -n $1 --image=registry.k8s.io/e2e-test-images/jessie-dnsutils:1.4 --restart=Never -- sh
 }
+
+function k8fdcrd() {
+  kubectl patch crd/$1 -p '{"metadata":{"finalizers":[]}}' --type=merge
+}
