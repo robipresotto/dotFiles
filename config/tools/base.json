@@ -23,7 +23,8 @@
       "fzf",
       "tmux",
       "diff-so-fancy",
-      "watch"
+      "watch",
+      "nproc"
     ]
   }
 }

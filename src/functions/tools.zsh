@@ -12,7 +12,7 @@ function install_tools() {
   if ! command -v jq &> /dev/null; then
     echo "Installing jq for JSON parsing..."
     brew install jq
-  }
+  fi
 
   echo "Installing tools from config..."
   
