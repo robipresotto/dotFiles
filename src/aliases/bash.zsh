@@ -1,5 +1,5 @@
 # Store dotfiles path during installation
-export DOTFILES="$HOME/.dotfiles"
+export DOTFILES="$HOME/dotFiles"
 
 alias reload='omz reload'
 alias update='(cd $DOTFILES && git pull && ./sync.sh && reload)'

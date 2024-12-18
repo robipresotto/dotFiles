@@ -24,7 +24,14 @@ sync_configs() {
     # Zsh configs
     echo "Syncing zsh configs..."
     cp "$REPO_ROOT/config/zsh/.zshrc" ~/
-    cp "$REPO_ROOT/config/zsh/.p10k.zsh" ~/
+    
+    # Sync p10k config only if not already present
+    if [[ ! -f ~/.p10k.zsh ]]; then
+        echo "Syncing p10k config..."
+        cp "$REPO_ROOT/config/zsh/.p10k.zsh" ~/
+    else
+        echo "p10k config already exists. Skipping sync."
+    fi
     
     # Source files
     echo "Syncing source files..."
