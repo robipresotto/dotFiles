@@ -10,13 +10,10 @@ DOTFILES_DIR="$(dirname "$SCRIPT_DIR")"
 echo "Script directory: $SCRIPT_DIR"
 echo "Dotfiles directory: $DOTFILES_DIR"
 
-# Create symlink to standardize location
-echo "Setting up dotfiles in ~/dotFiles..."
-if [ -e "$HOME/dotFiles" ]; then
-    echo "Removing existing dotFiles symlink..."
-    rm "$HOME/dotFiles"
-fi
-ln -s "$DOTFILES_DIR" "$HOME/dotFiles"
+# Create config directory and store path
+CONFIG_DIR="$HOME/.config/dotfiles"
+mkdir -p "$CONFIG_DIR"
+echo "DOTFILES_PATH=\"$DOTFILES_DIR\"" > "$CONFIG_DIR/config"
 
 # Source utilities
 source "$SCRIPT_DIR/utils.sh"

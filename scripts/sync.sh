@@ -5,6 +5,13 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(dirname "$SCRIPT_DIR")"
 
+# Source dotfiles path from config
+CONFIG_FILE="$HOME/.config/dotfiles/config"
+if [ -f "$CONFIG_FILE" ]; then
+    source "$CONFIG_FILE"
+    REPO_ROOT="$DOTFILES_PATH"
+fi
+
 # Debug information
 echo "Script directory: $SCRIPT_DIR"
 echo "Repository root: $REPO_ROOT"
