@@ -3,7 +3,7 @@ function ipinfo() {
 }
 
 function listen() {
-  sudo ngrep -q -d 'en0' -W byline '' 'host '$1''
+  sudo ngrep -q -d 'lo0' -W byline '' "host $1 and port $2"
 }
 
 function hc() {
