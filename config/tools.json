@@ -1,0 +1,13 @@
+{
+  "brew": {
+    "taps": [],
+    "casks": [
+      "font-fira-code-nerd-font"
+    ],
+    "formulas": [
+      "ngrep",
+      "romkatv/powerlevel10k/powerlevel10k",
+      "jq"
+    ]
+  }
+}

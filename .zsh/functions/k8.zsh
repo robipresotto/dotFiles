@@ -1,5 +1,5 @@
 function k8gpip() {
-  # k8gpip my_pod namespace
+  # Get pod ip -> k8gpip pod_name namespace
   kubectl describe pods $1 -n $2 | grep -m1 IP | awk '{print $2}'
 }
 
@@ -75,5 +75,5 @@ function k8dnsutils() {
 }
 
 function k8fdcrd() {
-  kubectl patch crd/$1 -p '{"metadata":{"finalizers":[]}}' --type=merge
+  kubectl patch crd/$1 -p '{"metadata":{"finalizers":}}' --type=merge
 }

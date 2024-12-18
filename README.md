@@ -1,27 +1,48 @@
-# dotFiles 🫶🏻
+# DotFiles 🫶🏻
+Modern dotfiles management with easy installation and customization.
 
-### Environment variables
-```sh
-IPINFO_TOKEN=XXXX (ipinfo.io)
-GIT_EMAIL=name@domain.com
-GIT_NAME=ANONYMOUS
+## 🌟 Features
+- Automated tool installation via configuration
+- Organized aliases and functions by category
+- Kubernetes, Docker, and Git tooling
+- Secure environment variable management
+- Easy synchronization with home directory
+
+## 🔧 Installation
+```bash
+git clone https://github.com/yourusername/dotfiles.git
+cd dotfiles
+./scripts/install.sh
 ```
-> the `.env` file should be at the repo `root` path: `./.zsh/.env`
 
-### Install dependencies
-```sh
-./install.sh
+## 📝 Configuration
+### Tools
+Add new tools in `config/tools.json`:
+```json
+{
+  "brew": {
+    "taps": [...],
+    "casks": [...],
+    "formulas": [...]
+  }
+}
 ```
-> after the install update your terminal to use `FiraCodeNerd` font.
 
-### Update
-```sh
+### Environment Variables
+1. Copy the template: `cp src/env/.env.example src/env/.env`
+2. Edit with your values:
+```bash
+IPINFO_TOKEN=xxx
+GIT_EMAIL=xxx
+GIT_NAME=xxx
+```
+
+## 🔄 Updates
+```bash
 update
 ```
-> to keep your dotfiles updated run `update` in your repo `root` path.
 
-### Help
-```sh
-help command
+## 🆘 Help
+```bash
+help category  # e.g., help k8
 ```
-> `help k8` - to show aliases and functions available.

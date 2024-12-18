@@ -24,6 +24,10 @@ function listFunctions() {
   done
 }
 
+function printComments() {
+  
+}
+
 function help() {
   listAliases | sed -n "/$1/,/◉/p" | sed '$d'
   listFunctions | sed -n "/$1/,/◉/p" | sed '$d'
