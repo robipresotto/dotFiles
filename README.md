@@ -10,8 +10,8 @@ Modern dotfiles management with easy installation and customization.
 
 ## 🔧 Installation
 ```bash
-git clone https://github.com/yourusername/dotfiles.git
-cd dotfiles
+git clone https://github.com/robipresotto/dotFiles.git
+cd dotFiles
 ./scripts/install.sh
 ```
 
