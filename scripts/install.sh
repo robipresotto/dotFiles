@@ -6,6 +6,10 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOTFILES_DIR="$(dirname "$SCRIPT_DIR")"
 
+# Debug info
+echo "Script directory: $SCRIPT_DIR"
+echo "Dotfiles directory: $DOTFILES_DIR"
+
 # Create symlink to standardize location
 echo "Setting up dotfiles in ~/.dotfiles..."
 if [ -e "$HOME/.dotfiles" ]; then
@@ -27,7 +31,8 @@ install_core_dependencies
 setup_directories
 
 # Install tools from config
-install_tools_from_config "$DOTFILES_DIR/config/tools.json"
+echo "Looking for tool configs in: $DOTFILES_DIR/config/tools"
+install_tools_from_config "$DOTFILES_DIR/config/tools"
 
 # Sync dotfiles
 "$SCRIPT_DIR/sync.sh"

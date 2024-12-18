@@ -2,7 +2,6 @@
 
 set -e
 
-# Get script location
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(dirname "$SCRIPT_DIR")"
 
@@ -26,9 +25,10 @@ sync_configs() {
     echo "Syncing zsh configs..."
     cp "$REPO_ROOT/config/zsh/.zshrc" ~/
     cp "$REPO_ROOT/config/zsh/.p10k.zsh" ~/
-
+    
     # Source files
     echo "Syncing source files..."
+    cp "$REPO_ROOT/src/core/source.zsh" ~/.zsh/
     cp -R "$REPO_ROOT/src/aliases/"* ~/.zsh/aliases/
     cp -R "$REPO_ROOT/src/functions/"* ~/.zsh/functions/
 

@@ -42,47 +42,82 @@ setup_directories() {
 }
 
 install_tools_from_config() {
-    local config_file="$1"
+    local config_dir="$1"
+    echo "Looking for configs in: $config_dir"
     
-    if [[ ! -f "$config_file" ]]; then
-        echo "⚠️  Config file not found: $config_file"
+    if [[ ! -d "$config_dir" ]]; then
+        echo "⚠️  Config directory not found: $config_dir"
         return 1
     fi
+
+    local combined_config="/tmp/combined_tools.json"
+    echo "{\"brew\": {\"taps\": [], \"formulas\": [], \"casks\": []}}" > "$combined_config"
+
+    # Process each config file
+    for config in "$config_dir"/*.json; do
+        if [[ -f "$config" ]]; then
+            echo "Processing config: $config"
+            
+            # Merge taps
+            jq -s '.[0].brew.taps + (.[1].brew.taps // [])' "$combined_config" "$config" | \
+            jq -s '{brew: {taps: .[0]}}' > "/tmp/taps.json"
+            
+            # Merge formulas
+            jq -s '.[0].brew.formulas + (.[1].brew.formulas // [])' "$combined_config" "$config" | \
+            jq -s '{brew: {formulas: .[0]}}' > "/tmp/formulas.json"
+            
+            # Merge casks
+            jq -s '.[0].brew.casks + (.[1].brew.casks // [])' "$combined_config" "$config" | \
+            jq -s '{brew: {casks: .[0]}}' > "/tmp/casks.json"
+            
+            # Combine all parts
+            jq -s '.[0].brew * .[1].brew * .[2].brew | {brew: .}' \
+                "/tmp/taps.json" "/tmp/formulas.json" "/tmp/casks.json" > "$combined_config"
+        fi
+    done
+
+    # Remove duplicates
+    jq '.brew.taps |= unique | .brew.formulas |= unique | .brew.casks |= unique' \
+        "$combined_config" > "${combined_config}.tmp" && \
+    mv "${combined_config}.tmp" "$combined_config"
 
     echo "🔍 Reading tools configuration..."
 
     # Install brew taps
     echo "🚰 Installing Homebrew taps..."
-    while IFS= read -r tap; do
-        echo "  Adding tap: $tap"
-        brew tap "$tap" || echo "  ⚠️  Failed to tap: $tap"
-    done < <(jq -r '.brew.taps[]?' "$config_file")
+    jq -r '.brew.taps[]?' "$combined_config" | while read -r tap; do
+        if [[ -n "$tap" ]]; then
+            echo "  Adding tap: $tap"
+            brew tap "$tap" || echo "  ⚠️  Failed to tap: $tap"
+        fi
+    done
 
     # Install brew casks
     echo "📦 Installing Homebrew casks..."
-    while IFS= read -r cask; do
+    jq -r '.brew.casks[]?' "$combined_config" | while read -r cask; do
         if [[ -n "$cask" ]]; then
-            if ! brew list --cask | grep -q "^${cask}$"; then
+            if ! brew list --cask 2>/dev/null | grep -q "^${cask}$"; then
                 echo "  Installing cask: $cask"
                 brew install --cask "$cask" || echo "  ⚠️  Failed to install cask: $cask"
             else
                 echo "  ✅ Cask already installed: $cask"
             fi
         fi
-    done < <(jq -r '.brew.casks[]?' "$config_file")
+    done
 
     # Install brew formulas
     echo "🍺 Installing Homebrew formulas..."
-    while IFS= read -r formula; do
+    jq -r '.brew.formulas[]?' "$combined_config" | while read -r formula; do
         if [[ -n "$formula" ]]; then
-            if ! brew list --formula | grep -q "^${formula}$"; then
+            if ! brew list --formula 2>/dev/null | grep -q "^${formula}$"; then
                 echo "  Installing formula: $formula"
                 brew install "$formula" || echo "  ⚠️  Failed to install formula: $formula"
             else
                 echo "  ✅ Formula already installed: $formula"
             fi
         fi
-    done < <(jq -r '.brew.formulas[]?' "$config_file")
+    done
 
+    rm -f "$combined_config" "/tmp/taps.json" "/tmp/formulas.json" "/tmp/casks.json"
     echo "🎉 Tool installation completed!"
 }

@@ -1,0 +1,28 @@
+{
+  "brew": {
+    "taps": [
+      "brewsci/bio",
+      "brewsci/science"
+    ],
+    "formulas": [
+      "samtools",
+      "bwa",
+      "fastqc",
+      "bedtools",
+      "blast",
+      "bowtie2",
+      "vcftools",
+      "bcftools",
+      "seqkit",
+      "minimap2",
+      "bamtools",
+      "muscle",
+      "mafft",
+      "clustal-w",
+      "fasttree"
+    ],
+    "casks": [
+      "igv"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "brew": {
+    "taps": [
+      "homebrew/cask-fonts"
+    ],
+    "casks": [
+      "font-fira-code-nerd-font",
+      "visual-studio-code",
+      "iterm2",
+      "docker"
+    ],
+    "formulas": [
+      "jq",
+      "ngrep",
+      "git",
+      "vim",
+      "wget",
+      "curl",
+      "tree",
+      "htop",
+      "ripgrep",
+      "fd",
+      "fzf",
+      "tmux",
+      "diff-so-fancy",
+      "watch"
+    ]
+  }
+}
