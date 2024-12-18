@@ -6,7 +6,6 @@
     "casks": [
       "font-fira-code-nerd-font",
       "visual-studio-code",
-      "iterm2",
       "docker"
     ],
     "formulas": [
