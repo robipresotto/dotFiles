@@ -11,12 +11,12 @@ echo "Script directory: $SCRIPT_DIR"
 echo "Dotfiles directory: $DOTFILES_DIR"
 
 # Create symlink to standardize location
-echo "Setting up dotfiles in ~/.dotfiles..."
-if [ -e "$HOME/.dotfiles" ]; then
-    echo "Removing existing .dotfiles symlink..."
-    rm "$HOME/.dotfiles"
+echo "Setting up dotfiles in ~/dotFiles..."
+if [ -e "$HOME/dotFiles" ]; then
+    echo "Removing existing dotFiles symlink..."
+    rm "$HOME/dotFiles"
 fi
-ln -s "$DOTFILES_DIR" "$HOME/.dotfiles"
+ln -s "$DOTFILES_DIR" "$HOME/dotFiles"
 
 # Source utilities
 source "$SCRIPT_DIR/utils.sh"
