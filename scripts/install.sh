@@ -34,7 +34,4 @@ install_tools_from_config "$DOTFILES_DIR/config/tools"
 # Sync dotfiles
 "$SCRIPT_DIR/sync.sh"
 
-# Run setup script for additional configurations
-"$SCRIPT_DIR/setup.sh"
-
 echo "🎉 Installation complete! Please restart your terminal."

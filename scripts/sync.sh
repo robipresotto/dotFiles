@@ -56,4 +56,7 @@ sync_configs() {
 # Execute the sync
 sync_configs
 
+# Run setup script for additional configurations
+"$SCRIPT_DIR/setup.sh"
+
 echo "Dotfiles synced successfully! 🚀"
