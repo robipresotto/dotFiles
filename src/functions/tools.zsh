@@ -6,7 +6,7 @@ function install_tools() {
   if [[ ! -f $config_file ]]; then
     echo "Error: Tools config file not found at $config_file"
     return 1
-  }
+  fi
 
   # Check if jq is installed
   if ! command -v jq &> /dev/null; then

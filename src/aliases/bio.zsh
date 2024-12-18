@@ -29,7 +29,7 @@ alias beds="bedtools sort"
 
 # FastQC aliases
 alias fqc="fastqc"
-alias fqcm="fastqc -t $(nproc)"  # Multi-threaded
+alias fqcm="fastqc -t $(sysctl -n hw.ncpu)"
 
 # VCFtools aliases
 alias vcfs="vcftools --stats"
@@ -37,9 +37,9 @@ alias vcff="vcftools --freq"
 alias vcfd="vcftools --depth"
 
 # BLAST aliases
-alias blastn="blastn -num_threads $(nproc)"
-alias blastp="blastp -num_threads $(nproc)"
-alias blastx="blastx -num_threads $(nproc)"
+alias blastn="blastn -num_threads $(sysctl -n hw.ncpu)"
+alias blastp="blastp -num_threads $(sysctl -n hw.ncpu)"
+alias blastx="blastx -num_threads $(sysctl -n hw.ncpu)"
 
 # SeqKit aliases
 alias sqk="seqkit"

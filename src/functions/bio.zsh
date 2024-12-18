@@ -8,7 +8,7 @@ function fqcheck() {
     if [[ ! -f "$input" ]]; then
         echo "Error: Input file $input not found"
         return 1
-    }
+    fi
     
     mkdir -p "$output_dir"
     fastqc "$input" -o "$output_dir"
