@@ -5,3 +5,4 @@ alias cl='clear'
 alias killbird='killall bird'
 alias sctl="sysctl -a"
 alias rsynca="rsync -arv"
+alias clipboard="pbcopy <"
