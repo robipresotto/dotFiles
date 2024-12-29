@@ -5,15 +5,67 @@ check_system_requirements() {
         echo "⚠️  This script is designed for macOS"
         exit 1
     fi
+    
+    check_brew_installation
+}
+
+check_brew_installation() {
+    echo "🔍 Checking Homebrew installation..."
+    
+    # Check if brew command exists in PATH
+    if ! command -v brew &> /dev/null; then
+        echo "⚠️  Homebrew is not installed or not in PATH"
+        
+        # Check common installation paths
+        local brew_paths=(
+            "/opt/homebrew/bin/brew"  # Apple Silicon
+            "/usr/local/bin/brew"     # Intel Mac
+            "$HOME/.homebrew/bin/brew" # Custom installation
+        )
+        
+        for brew_path in "${brew_paths[@]}"; do
+            if [[ -f "$brew_path" ]]; then
+                echo "📍 Found Homebrew at $brew_path"
+                echo "⚠️  Please add Homebrew to your PATH and restart your terminal:"
+                
+                if [[ "$brew_path" == "/opt/homebrew/bin/brew" ]]; then
+                    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"'
+                elif [[ "$brew_path" == "/usr/local/bin/brew" ]]; then
+                    echo 'eval "$(/usr/local/bin/brew shellenv)"'
+                else
+                    echo 'eval "$($brew_path shellenv)"'
+                fi
+                
+                exit 1
+            fi
+        done
+        
+        # If we get here, Homebrew is not installed at all
+        echo "❌ Homebrew is not installed"
+        echo "📥 Would you like to install Homebrew now? (y/n)"
+        read -r install_brew
+        
+        if [[ "$install_brew" =~ ^[Yy]$ ]]; then
+            echo "📦 Installing Homebrew..."
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            
+            # Check if installation was successful
+            if ! command -v brew &> /dev/null; then
+                echo "❌ Homebrew installation failed. Please install manually from:"
+                echo "🔗 https://brew.sh"
+                exit 1
+            fi
+        else
+            echo "❌ Homebrew is required to continue. Please install it manually from:"
+            echo "🔗 https://brew.sh"
+            exit 1
+        fi
+    fi
+    
+    echo "✅ Homebrew is installed and ready"
 }
 
 install_core_dependencies() {
-    # Install Homebrew if needed
-    if [[ ! -f /opt/homebrew/bin/brew ]]; then
-        echo "📦 Installing Homebrew..."
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    fi
-
     # Install Oh My Zsh if needed
     if [[ ! -d ~/.oh-my-zsh ]]; then
         echo "🛠 Installing Oh My Zsh..."
