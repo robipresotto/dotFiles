@@ -47,9 +47,9 @@ sync_configs() {
     cp -R "$REPO_ROOT/src/functions/"* ~/.zsh/functions/
 
     # Environment setup (if exists)
-    if [[ -f "$REPO_ROOT/src/env/.env" ]]; then
+    if [[ -f "$REPO_ROOT/config/env/.env" ]]; then
         echo "Syncing environment file..."
-        cp "$REPO_ROOT/src/env/.env" ~/.zsh/env/
+        cp "$REPO_ROOT/config/env/.env" ~/.zsh/env/
     fi
 }
 

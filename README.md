@@ -29,7 +29,7 @@ Add new tools in `config/tools.json`:
 ```
 
 ### Environment Variables
-1. Copy the template: `cp src/env/.env.example src/env/.env`
+1. Copy the template: `cp config/env/.env.example config/env/.env`
 2. Edit with your values:
 ```bash
 IPINFO_TOKEN=xxx
