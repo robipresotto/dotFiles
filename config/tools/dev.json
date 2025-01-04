@@ -1,0 +1,13 @@
+{
+    "brew": {
+      "taps": [],
+      "formulas": [
+        "node"
+      ],
+      "casks": [
+        "visual-studio-code",
+        "lm-studio"
+      ]
+    }
+  }
+  
