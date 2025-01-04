@@ -6,11 +6,6 @@ function sourceFiles() {
   done
 }
 
-# Get default browser
-function defaultBrowser() {
-  plutil -p ~/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist | grep 'https' -b3 |awk 'NR==3 {split($4, arr, "\""); print arr[2]}' | cut -d "." -f 3
-}
-
 # Format and print a header
 function printHeader() {
   local title="$1"
