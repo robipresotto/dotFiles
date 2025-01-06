@@ -14,6 +14,7 @@ git clone https://github.com/robipresotto/dotFiles.git
 cd dotFiles
 ./scripts/install.sh
 ```
+Then set "FiraCode Nerd Font" as your terminal font in your terminal preferences. (change the default font on config/tools/base.json)
 
 ## 📝 Configuration
 ### Tools
