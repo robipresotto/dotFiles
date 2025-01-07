@@ -6,3 +6,4 @@ alias killbird='killall bird'
 alias sctl="sysctl -a"
 alias rsynca="rsync -arv"
 alias clipboard="pbcopy <"
+alias keygenssh="ssh-keygen -t ed25519 -C"
