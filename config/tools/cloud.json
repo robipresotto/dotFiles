@@ -15,7 +15,8 @@
       "minikube",
       "kind",
       "k9s",
-      "stern"
+      "stern",
+      "kubeseal"
     ],
     "casks": [
       "lens",
