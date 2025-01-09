@@ -104,3 +104,6 @@ alias mock-api="json-server --watch db.json"  # Requires json-server
 alias ws-test="websocat -s 8080"  # Requires websocat
 alias ngrok-http="ngrok http"  # Requires ngrok
 alias localtunnel="lt --port"  # Requires localtunnel
+
+# Generate self-signed certificate
+alias self-signed-cert="openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem"
