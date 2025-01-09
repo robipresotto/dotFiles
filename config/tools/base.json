@@ -9,11 +9,8 @@
     ],
     "formulas": [
       "jq",
-      "ngrep",
       "git",
       "vim",
-      "wget",
-      "curl",
       "tree",
       "htop",
       "ripgrep",
@@ -21,8 +18,7 @@
       "fzf",
       "tmux",
       "diff-so-fancy",
-      "watch",
-      "nmap"
+      "watch"
     ]
   }
 }

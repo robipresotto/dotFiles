@@ -1,0 +1,28 @@
+{
+    "brew": {
+        "taps": [],
+        "casks": [],
+        "formulas": [
+            "speedtest-cli",
+            "mtr",
+            "wireshark",
+            "ncurses",
+            "networkmanager",
+            "nmap",
+            "iftop",
+            "iperf3",
+            "masscan",
+            "shodan",
+            "httpie",
+            "wrk",
+            "json-server",
+            "websocat",
+            "ngrok",
+            "ngrep",
+            "localtunnel",
+            "ipcalc",
+            "tcpdump",
+            "http-server"
+        ]
+    }
+}
