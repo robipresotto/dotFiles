@@ -22,7 +22,8 @@
             "localtunnel",
             "ipcalc",
             "tcpdump",
-            "http-server"
+            "http-server",
+            "arping"
         ]
     }
 }
