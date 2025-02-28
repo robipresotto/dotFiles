@@ -23,7 +23,8 @@
             "ipcalc",
             "tcpdump",
             "http-server",
-            "arping"
+            "arping",
+            "netcat"
         ]
     }
 }
