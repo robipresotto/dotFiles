@@ -93,6 +93,25 @@ alias pcap-read="tcpdump -r"
 alias pcap-write="tcpdump -w capture.pcap"
 alias tcpdump-http="tcpdump -A -s0 port 80"
 
+# Netcat Tools
+alias nc-listen="nc -l"
+alias nc-listen-udp="nc -ul"
+alias nc-listen-verbose="nc -lvn"
+alias nc-scan="nc -zv"
+alias nc-chat="nc -v"
+alias nc-transfer="nc -N"
+alias nc-proxy="nc -w 5"
+alias nc-banner="nc -vz -w 5"
+alias nc-port-range="nc -zv -w 1"
+alias nc-persistent="nc -k -l"
+alias nc-hex="nc -x"
+
+# Common nc use cases
+alias port-check="nc -zv localhost"
+alias remote-port-check="nc -zv -w 5"
+alias nc-serve-file="nc -l > received_file"
+alias nc-send-file="nc < file_to_send"
+
 # Development Tools
 alias serve="python3 -m http.server"
 
