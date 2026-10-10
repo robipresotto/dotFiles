@@ -1,8 +1,8 @@
 {
+  "enabled": false,
   "brew": {
     "taps": [
-      "brewsci/bio",
-      "brewsci/science"
+      "brewsci/bio"
     ],
     "formulas": [
       "samtools",
@@ -22,7 +22,7 @@
       "fasttree"
     ],
     "casks": [
-      "igv"
+      "igv-desktop"
     ]
   }
 }

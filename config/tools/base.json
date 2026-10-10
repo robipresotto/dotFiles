@@ -1,14 +1,14 @@
 {
+  "enabled": true,
   "brew": {
-    "taps": [
-      "homebrew/cask-fonts"
-    ],
+    "taps": [],
     "casks": [
       "font-fira-code-nerd-font",
-      "docker"
+      "docker-desktop"
     ],
     "formulas": [
       "jq",
+      "yq",
       "git",
       "vim",
       "tree",
@@ -19,7 +19,10 @@
       "tmux",
       "diff-so-fancy",
       "watch",
-      "step"
+      "step",
+      "bat",
+      "eza",
+      "zoxide"
     ]
   }
 }

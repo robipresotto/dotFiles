@@ -1,13 +1,16 @@
 {
-    "brew": {
-      "taps": [],
-      "formulas": [
-        "node"
-      ],
-      "casks": [
-        "visual-studio-code",
-        "lm-studio"
-      ]
-    }
+  "enabled": true,
+  "brew": {
+    "taps": [],
+    "formulas": [
+      "node",
+      "gh",
+      "shellcheck",
+      "pre-commit"
+    ],
+    "casks": [
+      "visual-studio-code",
+      "lm-studio"
+    ]
   }
-  
+}

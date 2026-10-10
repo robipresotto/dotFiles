@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "brew": {
+    "taps": [
+      "hashicorp/tap"
+    ],
+    "formulas": [
+      "hashicorp/tap/terraform",
+      "hashicorp/tap/vault",
+      "hashicorp/tap/packer",
+      "opentofu",
+      "ansible",
+      "sops",
+      "cosign",
+      "trivy",
+      "grype",
+      "dive",
+      "skaffold",
+      "mise",
+      "tailscale",
+      "golangci-lint"
+    ],
+    "casks": []
+  }
+}

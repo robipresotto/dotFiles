@@ -15,7 +15,6 @@ plugins=(
   brew
   kubectl
   xcode
-  github
   npm
   vscode
   dotenv
@@ -33,8 +32,8 @@ export LC_ALL=en_US.UTF-8
 # Cache settings
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
-# Hide username in prompt
-DEFAULT_USER prompt_context(){}
+# Hide username in prompt when it matches the logged-in user
+export DEFAULT_USER="$USER"
 
 # Source custom configurations (no theme sourcing here)
 [[ -f ~/.zsh/source.zsh ]] && source ~/.zsh/source.zsh

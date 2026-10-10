@@ -1,57 +1,46 @@
 #!/bin/zsh
 
-function install_tools() {
-  local config_file="$HOME/.zsh/config/tools.json"
-  
-  if [[ ! -f $config_file ]]; then
-    echo "Error: Tools config file not found at $config_file"
+# Resolve the dotfiles repo location (written by scripts/install.sh)
+function _dotfiles_path() {
+  if [[ -n "$DOTFILES_PATH" ]]; then
+    echo "$DOTFILES_PATH"
+  elif [[ -f "$HOME/.config/dotfiles/config" ]]; then
+    source "$HOME/.config/dotfiles/config"
+    echo "$DOTFILES_PATH"
+  else
+    echo ""
+  fi
+}
+
+# Frontend for scripts/tools.sh (profiles: list/enable/disable/install/status/vscode)
+function tools() {
+  local repo=$(_dotfiles_path)
+  if [[ -z "$repo" ]]; then
+    echo "Dotfiles path not found. Run ./scripts/install.sh first." >&2
     return 1
   fi
+  bash "$repo/scripts/tools.sh" "$@"
+}
 
-  # Check if jq is installed
-  if ! command -v jq &> /dev/null; then
-    echo "Installing jq for JSON parsing..."
-    brew install jq
-  fi
-
-  echo "Installing tools from config..."
-  
-  # Install brew taps
-  local taps=($(jq -r '.brew.taps[]' $config_file))
-  for tap in $taps; do
-    echo "Adding tap: $tap"
-    brew tap $tap
-  done
-
-  # Install brew casks
-  local casks=($(jq -r '.brew.casks[]' $config_file))
-  for cask in $casks; do
-    if ! brew list --cask | grep -q "^${cask}$"; then
-      echo "Installing cask: $cask"
-      brew install --cask $cask
-    else
-      echo "Cask already installed: $cask"
-    fi
-  done
-
-  # Install brew formulas
-  local formulas=($(jq -r '.brew.formulas[]' $config_file))
-  for formula in $formulas; do
-    if ! brew list --formula | grep -q "^${formula}$"; then
-      echo "Installing formula: $formula"
-      brew install $formula
-    else
-      echo "Formula already installed: $formula"
-    fi
-  done
-
-  echo "Tool installation completed!"
+function install_tools() {
+  tools install
 }
 
 function update_tools() {
   echo "Updating brew packages..."
   brew update && brew upgrade
-  
-  echo "Running install_tools to catch any new additions..."
-  install_tools
+
+  echo "Installing any new/changed tool profiles..."
+  tools install
+}
+
+# Shell/config maintenance shortcuts
+function reload-config() {
+  exec zsh -l
+}
+
+function dotfiles-update() {
+  local repo=$(_dotfiles_path)
+  [[ -n "$repo" ]] || { echo "Dotfiles path not found." >&2; return 1; }
+  (cd "$repo" && git pull && ./scripts/sync.sh && echo "✅ Updated. Restart your shell.")
 }

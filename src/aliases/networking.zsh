@@ -3,7 +3,7 @@ alias myip="curl -s http://checkip.dyndns.org/ | sed 's/[a-zA-Z/<> :]//g'"
 alias localip="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias ports="netstat -tulanp"
 alias listening="lsof -PiTCP -sTCP:LISTEN"
-alias networks="nmcli connection show"
+alias networks="networksetup -listallhardwareports"  # macOS equivalent of nmcli (Linux-only)
 
 # Added IPv6 and monitoring
 alias myipv6="curl -6 icanhazip.com"
@@ -42,14 +42,12 @@ alias udp-test="nc -vzu localhost"
 alias latency="ping -i .2 -c 100 -q"
 alias packet-loss="ping -i .2 -c 100 -q | grep 'packet loss'"
 alias net-quality="mtr --report --report-cycles=10"
-alias conn-track="sudo conntrack -L"
-alias socket-stat="ss -tunapl"
 alias bandwidth-test="iperf3 -c iperf.he.net"  # Requires iperf3
 
 # Security Scanning
 alias nmaph="nmap -v -sS -A -T4"
 alias nmapha="nmap -A -T4"
-alias nmaptcph="nmap -v -sS -p–A -T4"
+alias nmaptcph="nmap -v -sS -p- -T4"
 alias nmapah="nmap -v -sU -sS -p- -A -T4"
 alias nmapl="nmap localhost"
 alias nmapnse="nmap -sV --script=vulscan/vulscan.nse"
@@ -66,14 +64,8 @@ alias masscan-quick="masscan --rate=1000"  # Requires masscan
 alias shodan-host="shodan host"  # Requires shodan CLI
 
 # Web Testing
-alias wfuzz="wfuzz -w"
-alias wfuzz-quick="wfuzz -c -z file,"
-alias wfuzz-sub="wfuzz -c -w"
 
 # Added web testing
-alias wfuzz-auth="wfuzz -z file,users.txt -z file,pass.txt --basic FUZZ:FUZ2Z"
-alias wfuzz-params="wfuzz -z file,params.txt -d 'FUZZ=test'"
-alias wfuzz-slow="wfuzz -s 1 -t 1"  # Rate limited fuzzing
 alias curl-headers="curl -I"
 alias curl-timing="curl -w '@curl-format.txt' -o /dev/null -s"
 alias httpie-auth="http -a user:pass"  # Requires httpie

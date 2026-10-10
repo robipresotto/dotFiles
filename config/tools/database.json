@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "brew": {
+    "taps": [],
+    "formulas": [
+      "postgresql@17",
+      "mysql-client",
+      "mongosh",
+      "redis",
+      "mycli"
+    ],
+    "casks": []
+  }
+}

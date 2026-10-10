@@ -93,5 +93,20 @@ alias k8ru="k8 rollout undo"
 # Scaling Operations
 alias k8s="k8 scale"
 
-# Dashboard Access
-alias k8p="k8 proxy | browser http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/"
+# Context switching (from kubectx formula)
+alias kc='kubectx'
+alias kn='kubens'
+
+# Auth / validation
+alias k8can='k8 auth can-i'
+alias k8authcan='k8 auth can-i --list'
+alias kon='kubeconform -summary'
+alias knu='kubent'
+
+# Live views
+alias k8wa='k8 get pods -A -w'
+alias k8topn='k8 top nodes'
+alias hm='helm'
+
+# Dashboard access: handled by the k8p() function (a piped alias cannot
+# both block on `kubectl proxy` and open a browser)

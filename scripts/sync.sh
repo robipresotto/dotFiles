@@ -32,19 +32,25 @@ sync_configs() {
     echo "Syncing zsh configs..."
     cp "$REPO_ROOT/config/zsh/.zshrc" ~/
     
-    # Sync p10k config only if not already present
-    if [[ ! -f ~/.p10k.zsh ]]; then
-        echo "Syncing p10k config..."
-        cp "$REPO_ROOT/config/zsh/.p10k.zsh" ~/
+    # P10k: keep ~/.p10k.zsh as a symlink to the repo so config changes
+    # are version-controlled (a one-time backup is kept if it's a regular file)
+    if [[ -f ~/.p10k.zsh && ! -L ~/.p10k.zsh ]]; then
+        backup="$HOME/.p10k.zsh.bak.$(date +%Y%m%d%H%M%S)"
+        echo "Backing up existing p10k config to $backup"
+        mv ~/.p10k.zsh "$backup"
+    fi
+    if [[ -L ~/.p10k.zsh && "$(readlink ~/.p10k.zsh)" == "$REPO_ROOT/config/zsh/.p10k.zsh" ]]; then
+        echo "p10k config already linked. Skipping."
     else
-        echo "p10k config already exists. Skipping sync."
+        echo "Linking p10k config..."
+        ln -sf "$REPO_ROOT/config/zsh/.p10k.zsh" ~/.p10k.zsh
     fi
     
-    # Source files
+    # Source files (rsync --delete keeps ~/.zsh in sync when files are removed/renamed)
     echo "Syncing source files..."
     cp "$REPO_ROOT/src/core/source.zsh" ~/.zsh/
-    cp -R "$REPO_ROOT/src/aliases/"* ~/.zsh/aliases/
-    cp -R "$REPO_ROOT/src/functions/"* ~/.zsh/functions/
+    rsync -a --delete "$REPO_ROOT/src/aliases/" ~/.zsh/aliases/
+    rsync -a --delete "$REPO_ROOT/src/functions/" ~/.zsh/functions/
 
     # Environment setup (if exists)
     if [[ -f "$REPO_ROOT/config/env/.env" ]]; then

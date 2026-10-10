@@ -1,26 +1,14 @@
 {
+  "enabled": true,
   "brew": {
-    "taps": [
-      "aws/tap"
-    ],
+    "taps": [],
     "formulas": [
-      "kubernetes-cli",
-      "kubectx",
-      "kube-ps1",
-      "helm",
-      "terraform",
       "awscli",
       "azure-cli",
-      "google-cloud-sdk",
-      "minikube",
-      "kind",
-      "k9s",
-      "stern",
-      "kubeseal"
+      "aws-vault"
     ],
     "casks": [
-      "lens",
-      "aws-vault"
+      "gcloud-cli"
     ]
   }
 }

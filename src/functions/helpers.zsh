@@ -1,8 +1,10 @@
-# Source all files in a directory
-function sourceFiles() { 
-  local files=("${(@f)$(ls -p $1)}")
-  for file in $files; do
-    source $1/$file
+# Source all .zsh files in a directory (sorted, glob-safe)
+function sourceFiles() {
+  local dir="$1"
+  [[ -d $dir ]] || return 0
+  local f
+  for f in "$dir"/*.zsh(N.on); do
+    source "$f"
   done
 }
 
@@ -31,11 +33,11 @@ function printItem() {
 
 function listAliases() {
   local search="$1"
-  local files=("${(@f)$(ls -p ~/.zsh/aliases)}")
+  local files=("$HOME"/.zsh/aliases/*.zsh(N.on))
   
   for file in $files; do
     local matches=false
-    local category="${file%.zsh}"
+    local category="${${file##*/}%.zsh}"
     
     while IFS= read -r line; do
       if [[ $line =~ ^alias\ ([^=]+)=(.+)$ ]]; then
@@ -54,17 +56,17 @@ function listAliases() {
           printItem "$name" "$cmd" ""
         fi
       fi
-    done < ~/.zsh/aliases/$file
+    done < "$file"
   done
 }
 
 function listFunctions() {
   local search="$1"
-  local files=("${(@f)$(ls -p ~/.zsh/functions)}")
+  local files=("$HOME"/.zsh/functions/*.zsh(N.on))
   
   for file in $files; do
     local matches=false
-    local category="${file%.zsh}"
+    local category="${${file##*/}%.zsh}"
     local in_function=false
     local current_function=""
     local current_body=""
@@ -104,7 +106,7 @@ function listFunctions() {
         current_function=""
         current_body=""
       fi
-    done < ~/.zsh/functions/$file
+    done < "$file"
     
     # Handle last function in file
     if [[ $in_function == true && -n "$current_function" ]]; then

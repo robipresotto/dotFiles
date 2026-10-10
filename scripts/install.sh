@@ -27,11 +27,17 @@ install_core_dependencies
 # Setup directory structure
 setup_directories
 
-# Install tools from config
-echo "Looking for tool configs in: $DOTFILES_DIR/config/tools"
-install_tools_from_config "$DOTFILES_DIR/config/tools"
-
-# Sync dotfiles
+# Sync dotfiles into place first, so shell helpers are available immediately
 "$SCRIPT_DIR/sync.sh"
 
+# Install tools from enabled profiles (flags are forwarded to tools.sh, e.g. --dry-run)
+echo "Looking for tool configs in: $DOTFILES_DIR/config/tools"
+bash "$SCRIPT_DIR/tools.sh" install "$@"
+
+# Install VS Code extensions when the 'code' CLI is available
+if command -v code &> /dev/null; then
+  bash "$SCRIPT_DIR/tools.sh" vscode "$@"
+fi
+
 echo "🎉 Installation complete! Please restart your terminal."
+echo "   Manage profiles with: tools.sh list | enable <profile> | disable <profile> | status"

@@ -1,0 +1,18 @@
+# VS Code extensions installed by: scripts/tools.sh vscode
+# One extension ID per line. Lines starting with # are ignored.
+
+# Platform / infra
+HashiCorp.Terraform
+golang.go
+redhat.vscode-yaml
+ms-kubernetes-tools.vscode-kubernetes-tools
+ms-azuretools.vscode-docker
+
+# Git / GitHub
+eamodio.gitlens
+GitHub.vscode-pull-request-github
+
+# General
+ms-vscode.makefile-tools
+mechatroner.rainbow-csv
+zxh404.vscode-proto3

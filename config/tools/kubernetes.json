@@ -1,0 +1,29 @@
+{
+  "enabled": true,
+  "brew": {
+    "taps": [
+      "fluxcd/tap"
+    ],
+    "formulas": [
+      "kubernetes-cli",
+      "kubectx",
+      "helm",
+      "kustomize",
+      "helmfile",
+      "fluxcd/tap/flux",
+      "argocd",
+      "k9s",
+      "stern",
+      "kubeseal",
+      "kubelogin",
+      "kubeconform",
+      "kubent",
+      "eksctl",
+      "minikube",
+      "kind"
+    ],
+    "casks": [
+      "lens"
+    ]
+  }
+}
